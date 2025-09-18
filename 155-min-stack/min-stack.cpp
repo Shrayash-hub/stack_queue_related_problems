@@ -27,7 +27,7 @@ public:
         if(st.empty()) return;
         long long top_val = st.top();
         st.pop();
-        if(top_val<min_val){
+        if(top_val<min_val){ // when the encoding is used , original element is saved in the min_val and encoded value is saved in stack , that why while decoding old_min = 2*val - Encoded value is converted into 2* min_val - top_val(stack value)
             min_val = 2LL *min_val - top_val;
         }
     }
