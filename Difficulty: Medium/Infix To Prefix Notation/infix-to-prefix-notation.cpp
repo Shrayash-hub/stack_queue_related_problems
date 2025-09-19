@@ -42,8 +42,8 @@ class Solution {
                 if(!st.empty()) st.pop();
             }
             
-            // when we encounter a operand push them to the stack , if the last entered operand have the lesser than or equal to the priority the new one
-            // except in case of '^' , in its case on stricly greater than priority operand will be popped out
+            // when we encounter a operand push them to the stack , if the last entered operand have the striclty lesser than the priority the new one
+            // except in case of '^' , in its case greater than or equal to priority operand will be popped out (cases are changed  here)
             else{
                 while(!st.empty() && st.top()!='(' &&
                         (prio(st.top()) > prio(s[i]) ||
@@ -63,7 +63,7 @@ class Solution {
     }
     string infixToPrefix(string &s) {
         // standard trick is to reverse the infix expression , change '(' to ')' and ')' to '('
-        // then convert that infix expression into postfix
+        // then convert that infix expression into postfix( changed cases one )
         // and then again reverse
         reverse(s.begin(),s.end());
         for(int i=0;i<s.size();i++){
