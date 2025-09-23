@@ -18,6 +18,7 @@ public:
             }
             st.push(i);
         }
+        // if stack is still not empty after all calculations that means remaining elements dont have any nse , so we will assume it n 
         while(!st.empty()){
             int nse = n;
             int element = st.top();
